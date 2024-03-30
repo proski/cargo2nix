@@ -166,7 +166,7 @@ let
 
     configureCargo = ''
       mkdir -p .cargo
-      cat > .cargo/config <<'EOF'
+      cat > .cargo/config.toml <<'EOF'
       [target."${rustBuildTriple}"]
       linker = "${ccForBuild}"
     '' + optionalString (codegenOpts != null && codegenOpts ? "${rustBuildTriple}") (''
