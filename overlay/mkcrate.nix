@@ -231,7 +231,7 @@ let
       if [ -n "$manifest_dir" ]; then popd; fi
 
       # If the crate is a workspace, reduce it to a crate of just a workspace of a single crate
-      if [ $manifest_path != "Cargo.toml" ]; then
+      if [ "$manifest_path" != "Cargo.toml" ]; then
         mv Cargo.toml Cargo.workspace.toml
         sanitizeTomlForRemarshal Cargo.workspace.toml
         reduceWorkspaceToml Cargo.workspace.toml Cargo.toml "$manifest_dir"
